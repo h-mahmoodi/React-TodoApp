@@ -1,0 +1,10 @@
+.header {
+  background: linear-gradient(#4f46e5, #312e81);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 1rem 0rem 1rem;
+  color: #f8fafc;
+}
