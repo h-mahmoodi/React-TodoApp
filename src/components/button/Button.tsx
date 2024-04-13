@@ -1,17 +1,22 @@
-import { type ReactNode } from "react";
+import { ComponentPropsWithRef, type ReactNode } from "react";
 
 import classes from "./Button.module.css";
 type ButtonProps = {
   children: ReactNode;
-  color?: "indigo" | "red";
+  color?: "indigo" | "green" | "black" | "orange" | "red";
   size?: "sm" | "md" | "lg";
-};
+} & ComponentPropsWithRef<"button">;
 
 export default function Button({
   children,
   color = "indigo",
-  size = "sm",
+  size = "md",
+  ...props
 }: ButtonProps) {
   const styles = `${classes.button} ${classes[color]} ${classes[size]}`;
-  return <button className={styles}>{children}</button>;
+  return (
+    <button className={styles} {...props}>
+      {children}
+    </button>
+  );
 }

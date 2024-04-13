@@ -1,6 +1,5 @@
-import React from "react";
 import TodoList from "../../components/todo-list/TodoList";
-import { useTodoContext } from "../../store/todo-context";
+import { useTodoContext } from "../../hooks/useTodoContext";
 
 export default function DoingPage() {
   const TodoCTX = useTodoContext();

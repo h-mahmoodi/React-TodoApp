@@ -1,6 +1,5 @@
 import { type Todo } from "../../types/todo";
-import Button from "../button/Button";
-import Icon from "../icon/Icon";
+import Label from "../label/Label";
 import classes from "./TodoListItem.module.css";
 import { Link } from "react-router-dom";
 
@@ -10,34 +9,34 @@ type TodoListItemProps = {
 
 export default function TodoListItem({ todo }: TodoListItemProps) {
   return (
-    <div className={classes.item}>
-      <Link to={todo.id} className={classes.link}>
+    <div className={`${classes.item} ${classes[todo.status]}`}>
+      <Link to={`/todos/${todo.id}`} className={classes.link}>
         <div className={classes.header}>
           <div>
             <h3 className={classes.title}>{todo.title}</h3>
-            <div>
-              <span className={classes.date}>{todo.createdAt}</span>
-              <span> </span>
-              <span className={classes.date}>#{todo.id}</span>
-            </div>
-          </div>
-          <div className={classes.details}>
-            <span className={classes.status}>{todo.status}</span>
           </div>
         </div>
 
         <div className={classes.description}>{todo.description}</div>
+
+        <div className={classes.footer}>
+          <div>
+            {todo.status === "todo" && (
+              <Label label={todo.status} color="indigo" />
+            )}
+            {todo.status === "doing" && (
+              <Label label={todo.status} color="green" />
+            )}
+            {todo.status === "done" && (
+              <Label label={todo.status} color="black" />
+            )}
+          </div>
+          <div className={classes.footerDetails}>
+            <Label label={`#${todo.id}`} color="black" size="sm" />
+            <Label label={todo.createdAt} color="black" size="sm" />
+          </div>
+        </div>
       </Link>
-      <div className={classes.footer}>
-        <Button>
-          <Icon iconName="fi-br-check" />
-          <span>Start Doing</span>
-        </Button>
-        {/* <Button color="red">
-          <Icon iconName="fi-br-trash" />
-          <span>Remove</span>
-        </Button> */}
-      </div>
     </div>
   );
 }

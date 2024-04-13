@@ -2,7 +2,7 @@
   position: relative;
   width: 40rem;
   height: 70rem;
-  background-color: #f8fafc;
+  background-color: white;
   border-radius: 10px;
   overflow: hidden;
   display: grid;
@@ -10,7 +10,7 @@
 }
 
 .page-container {
-  padding: 1rem 1rem;
+  padding: 1.2rem;
   overflow-y: scroll;
 }
 
@@ -59,4 +59,9 @@ h1 {
   justify-content: center;
   margin-top: 2rem;
   gap: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 2rem;
 }

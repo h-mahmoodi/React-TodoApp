@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "../pages/Layout";
 import AllTodoPage from "../pages/all-todo-page/AllTodoPage";
@@ -17,7 +16,7 @@ export default function AppRouter() {
         <Route path="doing" element={<DoingPage />} />
         <Route path="done" element={<DonePage />} />
         <Route path="add-todo" element={<AddTodo />} />
-        <Route path=":id" element={<TodoItemPage />} />
+        <Route path="todos/:id" element={<TodoItemPage />} />
       </Route>
     </Routes>
   );

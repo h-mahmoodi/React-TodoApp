@@ -11,13 +11,33 @@
   background-color: #4f46e5;
   color: #f8fafc;
 }
-
+.green {
+  background-color: #047857;
+  color: #f8fafc;
+}
+.black {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
 .red {
   background-color: #b91c1c;
+  color: #f8fafc;
+}
+.orange {
+  background-color: #f97316;
   color: #f8fafc;
 }
 
 .sm {
   padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.md {
+  padding: 0.7rem 1.4rem;
+  border-radius: 5px;
+}
+.lg {
+  padding: 0.8rem 1.6rem;
   border-radius: 5px;
 }

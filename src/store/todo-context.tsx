@@ -1,7 +1,7 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import todoReducer, { ActionType } from "./todo-reducer";
 
-import { type Todo } from "../types/todo";
+import { TodoStatus, type Todo } from "../types/todo";
 import {
   type Context,
   type TodoContextProviderProps,
@@ -39,7 +39,7 @@ const initialState: TodoState = {
   todos: todos,
 };
 
-const TodoContext = createContext<Context | null>(null);
+export const TodoContext = createContext<Context | null>(null);
 
 export default function TodoContextProvider({
   children,
@@ -53,20 +53,16 @@ export default function TodoContextProvider({
   const remove = (id: string) => {
     dispatch({ type: ActionType.remove, payload: id });
   };
+  const changeStatus = (id: string, status: TodoStatus) => {
+    dispatch({ type: ActionType.change, payload: { id, status } });
+  };
 
   const value = {
     todos: state.todos,
     add,
     remove,
+    changeStatus,
   };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 }
-
-export const useTodoContext = () => {
-  const context = useContext(TodoContext);
-  if (context === null) {
-    throw new Error("Todo Context Error.");
-  }
-  return context;
-};

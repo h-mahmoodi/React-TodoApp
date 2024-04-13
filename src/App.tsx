@@ -5,11 +5,11 @@ import TodoContextProvider from "./store/todo-context";
 
 function App() {
   return (
-    <BrowserRouter>
-      <TodoContextProvider>
+    <TodoContextProvider>
+      <BrowserRouter>
         <AppRouter />
-      </TodoContextProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </TodoContextProvider>
   );
 }
 

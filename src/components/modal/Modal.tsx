@@ -13,11 +13,10 @@ export default function Modal({
 }: ModalProps) {
   return (
     <div className={classes.modal}>
-      <div className={classes.backdrop}></div>
+      <div className={classes.backdrop} onClick={onClose}></div>
       <div className={classes.content}>
         <div className={classes.header}>
           <span>{title}</span>
-          <button onClick={onClose}>X</button>
         </div>
         <div className={classes.data}>{children}</div>
       </div>

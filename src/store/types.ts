@@ -6,8 +6,8 @@ export type Context = {
   todos: Todo[];
   add: (todo: Todo) => void;
   remove: (id: string) => void;
+  changeStatus: (id: string, status: TodoStatus) => void;
   //   edit: (id: string, todo: Todo) => void;
-  //   changeStatus: (id: string, status: TodoStatus) => void;
 };
 
 export type TodoContextProviderProps = {
