@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className={classes.footer}>
-      <Link className="btn btn-circle" to="add-todo">
+      <Link className="btn btn-circle" to="add">
         <Icon iconName="fi-br-plus" />
       </Link>
     </footer>

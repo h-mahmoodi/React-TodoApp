@@ -1,0 +1,25 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.error {
+  color: #991b1b;
+  font-size: 1.3rem;
+}
+.input label {
+  font-size: 1.5rem;
+  color: #262626;
+}
+.input input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #f3f4f6;
+  font-size: 1.6rem;
+}

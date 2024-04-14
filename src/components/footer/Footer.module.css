@@ -1,7 +1,13 @@
 .footer {
   /* background-color: #f1f5f9; */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   padding: 1rem 1rem;
+  background: linear-gradient(#4f46e5, #312e81);
+  border-radius: 50px 50px 0 0;
 }

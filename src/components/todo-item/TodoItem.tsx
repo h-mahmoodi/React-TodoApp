@@ -39,7 +39,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
             <Label label={todo.status} color="black" />
           )}
         </div>
-        <h3>{todo.title}</h3>
+        <h3 className={classes.title}>{todo.title}</h3>
         <p className={classes.description}>{todo.description}</p>
         <div className={classes.footer}>
           {todo.status === "todo" && (
@@ -71,7 +71,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
           )}
 
           <div className={classes.buttons}>
-            <Button color="orange">
+            <Button color="orange" onClick={() => navigate(`/edit/${todo.id}`)}>
               <Icon iconName="fi-br-edit" />
               <span>Edit</span>
             </Button>
